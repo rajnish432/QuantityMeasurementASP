@@ -87,5 +87,69 @@ namespace QuantityMeasurementTest
             double feet2 = this.quantityMeasurement.GetFeet(10.0);
             Assert.AreEqual(feet1, feet2);
         }
+
+        /// <summary>
+        /// Test 1.6: To Check 0 inch equals 0 inch.
+        /// </summary>
+        [Test]
+        public void GivenTwoInchSameValues_WhenCompared_ShouldReturnEqual()
+        {
+            double inch1 = this.quantityMeasurement.GetInch(0.0);
+            double inch2 = this.quantityMeasurement.GetInch(0.0);
+            Assert.AreEqual(inch1, inch2);
+        }
+
+        /// <summary>
+        /// Test 1.7: To Check 10 Inch is not equal to 0 Inch.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentInchValues_WhenCompared_ShouldReturnNotEqual()
+        {
+            double inch1 = this.quantityMeasurement.GetInch(0.0);
+            double inch2 = this.quantityMeasurement.GetInch(10.0);
+            Assert.AreNotEqual(inch1, inch2);
+        }
+
+        /// <summary>
+        /// Test 1.8: To Check is Object is null.
+        /// </summary>
+        [Test]
+        public void GivenNullValues_WhenChecked_ShouldReturnFalse()
+        {
+            bool result = this.quantityMeasurement.Equals(null);
+            Assert.IsFalse(result);
+        }
+
+        /// <summary>
+        /// Test 1.9: To Check is Object Reference.
+        /// </summary>
+        [Test]
+        public void GivenReference_WhenChecked_ShouldReturnTrue()
+        {
+            bool result = this.quantityMeasurement.Equals(this.quantityMeasurement);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Test 1.10: To Check Type.
+        /// </summary>
+        [Test]
+        public void GivenClassReferences_WhenTypeChecked_ShouldReturnTrue()
+        {
+            QuantityMeasurement.QuantityMeasurement quantity1 = new QuantityMeasurement.QuantityMeasurement();
+            QuantityMeasurement.QuantityMeasurement quantity2 = new QuantityMeasurement.QuantityMeasurement();
+            Assert.AreEqual(quantity1, quantity2);
+        }
+
+        /// <summary>
+        /// Test 1.11: To Perform Equality Check.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameInchValues_WhenCompared_ShouldReturnEqual()
+        {
+            double inch1 = this.quantityMeasurement.GetInch(10.0);
+            double inch2 = this.quantityMeasurement.GetInch(10.0);
+            Assert.AreEqual(inch2, inch1);
+        }
     }
 }

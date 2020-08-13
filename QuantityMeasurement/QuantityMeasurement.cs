@@ -9,13 +9,23 @@ namespace QuantityMeasurement
     public class QuantityMeasurement
     {
         /// <summary>
-        /// Function to get double values.
+        /// Function to get feet values.
         /// </summary>
         /// <param name="feet"></param>
         /// <returns></returns>
         public double GetFeet(double feet)
         {
             return feet;
+        }
+
+        /// <summary>
+        /// Function to get Inch values.
+        /// </summary>
+        /// <param name="inch"></param>
+        /// <returns></returns>
+        public double GetInch(double inch)
+        {
+            return inch;
         }
 
         /// <summary>
