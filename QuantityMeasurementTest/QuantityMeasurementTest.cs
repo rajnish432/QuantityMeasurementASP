@@ -65,5 +65,16 @@ namespace QuantityMeasurementTest
             bool result = this.quantityMeasurement.Equals(this.quantityMeasurement);
             Assert.IsTrue(result);
         }
+
+        /// <summary>
+        /// Test 1.4: To Check Type.
+        /// </summary>
+        [Test]
+        public void GivenClassReference_WhenTypeChecked_ShouldReturnTrue()
+        {
+            QuantityMeasurement.QuantityMeasurement quantity1 = new QuantityMeasurement.QuantityMeasurement();
+            QuantityMeasurement.QuantityMeasurement quantity2 = new QuantityMeasurement.QuantityMeasurement();
+            Assert.AreEqual(quantity1, quantity2);
+        }
     }
 }
