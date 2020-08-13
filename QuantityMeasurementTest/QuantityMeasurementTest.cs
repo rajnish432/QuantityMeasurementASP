@@ -55,5 +55,15 @@ namespace QuantityMeasurementTest
             bool result = this.quantityMeasurement.Equals(null);
             Assert.IsFalse(result);
         }
+
+        /// <summary>
+        /// Test 1.3: To Check is Object Reference.
+        /// </summary>
+        [Test]
+        public void GivenClassReference_WhenChecked_ShouldReturnTrue()
+        {
+            bool result = this.quantityMeasurement.Equals(this.quantityMeasurement);
+            Assert.IsTrue(result);
+        }
     }
 }
