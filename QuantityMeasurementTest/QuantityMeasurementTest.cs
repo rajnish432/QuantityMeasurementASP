@@ -100,7 +100,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test 1.7: To Check 10 Inch is not equal to 0 Inch.
+        /// Test 1.6: To Check 10 Inch is not equal to 0 Inch.
         /// </summary>
         [Test]
         public void GivenTwoDifferentInchValues_WhenCompared_ShouldReturnNotEqual()
@@ -111,7 +111,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test 1.8: To Check is Object is null.
+        /// Test 1.7: To Check is Object is null.
         /// </summary>
         [Test]
         public void GivenNullValues_WhenChecked_ShouldReturnFalse()
@@ -121,7 +121,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test 1.9: To Check is Object Reference.
+        /// Test 1.8: To Check is Object Reference.
         /// </summary>
         [Test]
         public void GivenReference_WhenChecked_ShouldReturnTrue()
@@ -131,7 +131,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test 1.10: To Check Type.
+        /// Test 1.9: To Check Type.
         /// </summary>
         [Test]
         public void GivenClassReferences_WhenTypeChecked_ShouldReturnTrue()
@@ -142,7 +142,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test 1.11: To Perform Equality Check.
+        /// Test 1.10: To Perform Equality Check.
         /// </summary>
         [Test]
         public void GivenTwoSameInchValues_WhenCompared_ShouldReturnEqual()
@@ -153,7 +153,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test 1.12: To Perform unit Conversion.
+        /// Test 1.11: To Perform unit Conversion.
         /// </summary>
         [Test]
         public void GivenFeetValues_WhenProper_ShouldReturnInchValue()
@@ -163,7 +163,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test 1.13: To Check 1 Feet is Not Equal To 1 Inch.
+        /// Test 1.12: To Check 1 Feet is Not Equal To 1 Inch.
         /// </summary>
         [Test]
         public void GivenFeetValue_WhenProper_ShouldReturnInchValue()
@@ -173,13 +173,23 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test 1.14: To Check 1 Inch is Not Equal To 1 Feet.
+        /// Test 1.13: To Check 1 Inch is Not Equal To 1 Feet.
         /// </summary>
         [Test]
         public void GivenInchValue_WhenProper_ShouldReturnFeetValue()
         {
             double inch1 = this.quantityMeasurement.GetConvertedValue(1.0, QuantityMeasurement.ConversionUnits.Units.FEET);
             Assert.AreNotEqual(1.0, inch1);
+        }
+
+        /// <summary>
+        /// Test 1.14: To Check 1 Feet is Equal To 12 Inch.
+        /// </summary>
+        [Test]
+        public void GivenFeetValue_WhenConverted_ShouldReturnInchValue()
+        {
+            double inch1 = this.quantityMeasurement.GetConvertedValue(1.0, QuantityMeasurement.ConversionUnits.Units.INCH);
+            Assert.AreEqual(12.0, inch1);
         }
     }
 }
