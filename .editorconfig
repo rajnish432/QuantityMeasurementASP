@@ -14,3 +14,6 @@ dotnet_diagnostic.SA1602.severity = none
 
 # SA1611: Element parameters should be documented
 dotnet_diagnostic.SA1611.severity = silent
+
+# SA1208: System using directives should be placed before other using directives
+dotnet_diagnostic.SA1208.severity = silent
