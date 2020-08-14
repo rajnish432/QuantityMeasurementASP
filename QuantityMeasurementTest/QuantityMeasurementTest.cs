@@ -178,8 +178,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenInchValue_WhenProper_ShouldReturnFeetValue()
         {
-            double inch1 = this.quantityMeasurement.GetConvertedValue(1.0, QuantityMeasurement.ConversionUnits.Units.FEET);
-            Assert.AreNotEqual(1.0, inch1);
+            double feet = this.quantityMeasurement.GetConvertedValue(1.0, QuantityMeasurement.ConversionUnits.Units.FEET);
+            Assert.AreNotEqual(1.0, feet);
         }
 
         /// <summary>
@@ -190,6 +190,16 @@ namespace QuantityMeasurementTest
         {
             double inch1 = this.quantityMeasurement.GetConvertedValue(1.0, QuantityMeasurement.ConversionUnits.Units.INCH);
             Assert.AreEqual(12.0, inch1);
+        }
+
+        /// <summary>
+        /// Test 1.15: To Check 12 Inch is Equal To 1 Feet.
+        /// </summary>
+        [Test]
+        public void GivenInchValue_WhenConverted_ShouldReturnFeetValue()
+        {
+            double feet = this.quantityMeasurement.GetConvertedValue(12.0, QuantityMeasurement.ConversionUnits.Units.FEET);
+            Assert.AreEqual(1.0, feet);
         }
     }
 }
