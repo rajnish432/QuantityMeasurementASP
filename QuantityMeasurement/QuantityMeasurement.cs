@@ -8,14 +8,15 @@ namespace QuantityMeasurement
     /// </summary>
     public class QuantityMeasurement
     {
+        private ConversionUnits conversion = new ConversionUnits();
         /// <summary>
         /// Function to get converted values.
         /// </summary>
         /// <param name="unit"></param>
         /// <returns></returns>
-        public double GetConvertedValue(double unit)
+        public double GetConvertedValue(double unit, ConversionUnits.Units conversionUnit)
         {
-            return unit;
+            return unit * this.conversion.GetConversionUnit(conversionUnit);
         }
 
         /// <summary>
