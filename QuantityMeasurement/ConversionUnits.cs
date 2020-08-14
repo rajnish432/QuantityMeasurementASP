@@ -17,7 +17,12 @@ namespace QuantityMeasurement
             FEET,
         }
 
-        public double GetConversionUnit(Units units) 
+        /// <summary>
+        /// Function to get Double Enum Values.
+        /// </summary>
+        /// <param name="units"></param>
+        /// <returns></returns>
+        public double GetConversionUnit(Units units)
         {
             switch (units)
             {
