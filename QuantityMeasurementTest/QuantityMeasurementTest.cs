@@ -171,5 +171,15 @@ namespace QuantityMeasurementTest
             double inch1 = this.quantityMeasurement.GetConvertedValue(1.0, QuantityMeasurement.ConversionUnits.Units.INCH);
             Assert.AreNotEqual(1.0, inch1);
         }
+
+        /// <summary>
+        /// Test 1.14: To Check 1 Inch is Not Equal To 1 Feet.
+        /// </summary>
+        [Test]
+        public void GivenInchValue_WhenProper_ShouldReturnFeetValue()
+        {
+            double inch1 = this.quantityMeasurement.GetConvertedValue(1.0, QuantityMeasurement.ConversionUnits.Units.FEET);
+            Assert.AreNotEqual(1.0, inch1);
+        }
     }
 }
