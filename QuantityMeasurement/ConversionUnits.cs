@@ -16,6 +16,7 @@ namespace QuantityMeasurement
             FEET_TO_INCH,
             INCH_TO_FEET,
             FEET_TO_YARD,
+            INCH_TO_YARD,
         }
 
         /// <summary>
@@ -35,6 +36,9 @@ namespace QuantityMeasurement
 
                 case Units.FEET_TO_YARD:
                     return 0.33;
+
+                case Units.INCH_TO_YARD:
+                    return 1 / 36.0;
 
                 default:
                     return 0.0;

@@ -222,5 +222,15 @@ namespace QuantityMeasurementTest
             double yard = this.quantityMeasurement.GetConvertedValue(1.0, QuantityMeasurement.ConversionUnits.Units.FEET_TO_YARD);
             Assert.AreNotEqual(1.0, Math.Round(yard));
         }
+
+        /// <summary>
+        /// Test 1.18: To Check 1 Inch is Not Equal To 1 Yard.
+        /// </summary>
+        [Test]
+        public void GivenInchValue_WhenConvertedToYard_ShouldReturnNotEqual()
+        {
+            double yard = this.quantityMeasurement.GetConvertedValue(1.0, QuantityMeasurement.ConversionUnits.Units.INCH_TO_YARD);
+            Assert.AreNotEqual(1.0, Math.Round(yard));
+        }
     }
 }
