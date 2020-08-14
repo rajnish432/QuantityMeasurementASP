@@ -20,6 +20,8 @@ namespace QuantityMeasurement
             YARD_TO_INCH,
             YARD_TO_FEET,
             INCH_TO_CENTIMETER,
+            INCH_TO_INCH,
+            CENTIMETER_TO_INCH,
         }
 
         /// <summary>
@@ -52,8 +54,11 @@ namespace QuantityMeasurement
                 case Units.INCH_TO_CENTIMETER:
                     return 2.5;
 
+                case Units.CENTIMETER_TO_INCH:
+                    return 1 / 2.5;
+
                 default:
-                    return 0.0;
+                    return 1.0;
             }
         }
     }

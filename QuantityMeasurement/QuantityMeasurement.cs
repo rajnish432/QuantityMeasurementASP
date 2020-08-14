@@ -16,9 +16,15 @@ namespace QuantityMeasurement
         /// <param name="unit"></param>
         /// <param name="conversionUnit"></param>
         /// <returns></returns>
-        public double GetConvertedValue(double unit, ConversionUnits.Units conversionUnit)
+        public double GetConvertedValue(double[] unit, params ConversionUnits.Units[] conversionUnit)
         {
-            return unit * this.conversion.GetConversionUnit(conversionUnit);
+            double value = 0.0;
+            for (int i = 0; i < unit.Length; i++)
+            {
+                value += unit[i] * this.conversion.GetConversionUnit(conversionUnit[i]);
+            }
+
+            return value;
         }
 
         /// <summary>
