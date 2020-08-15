@@ -3,6 +3,8 @@
 // </copyright>
 namespace QuantityMeasurement
 {
+    using System;
+
     /// <summary>
     /// Main Class To Perform Conversion.
     /// </summary>
@@ -21,6 +23,12 @@ namespace QuantityMeasurement
             double value = 0.0;
             for (int i = 0; i < unit.Length; i++)
             {
+                if (conversionUnit[i].Equals(ConversionUnits.Units.CELCIUS_TO_FAHRENHEIT))
+                {
+                    Console.WriteLine("hello");
+                    return (unit[i] * this.conversion.GetConversionUnit(conversionUnit[i])) + 32;
+                }
+
                 value += unit[i] * this.conversion.GetConversionUnit(conversionUnit[i]);
             }
 

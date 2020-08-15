@@ -28,6 +28,7 @@ namespace QuantityMeasurement
             KG_TO_GRAMS,
             TONNE_TO_KG,
             GRAMS_TO_KG,
+            CELCIUS_TO_FAHRENHEIT,
         }
 
         /// <summary>
@@ -80,6 +81,9 @@ namespace QuantityMeasurement
 
                 case Units.GRAMS_TO_KG:
                     return 1 / 1000.0;
+
+                case Units.CELCIUS_TO_FAHRENHEIT:
+                    return 1.8;
 
                 default:
                     return 1.0;
