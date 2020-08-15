@@ -358,5 +358,27 @@ namespace QuantityMeasurementTest
             double addedValue = this.quantityMeasurement.GetConvertedValue(inchValue, QuantityMeasurement.ConversionUnits.Units.INCH_TO_INCH, QuantityMeasurement.ConversionUnits.Units.CENTIMETER_TO_INCH);
             Assert.AreEqual(3.0, addedValue);
         }
+
+        /// <summary>
+        /// Test 5.1: To Check 1 Gallon is Equal to 3.78 Litres.
+        /// </summary>
+        [Test]
+        public void GivenGallonValue_WhenConverted_ShouldReturnLitreValue()
+        {
+            double[] gallonValue = { 1.0 };
+            double litre = this.quantityMeasurement.GetConvertedValue(gallonValue, QuantityMeasurement.ConversionUnits.Units.GALLON_TO_LITRE);
+            Assert.AreEqual(3.78, litre);
+        }
+
+        /// <summary>
+        /// Test 5.2: To Check 1 Litre is Equal to 1000 Ml.
+        /// </summary>
+        [Test]
+        public void GivenLitreValue_WhenConverted_ShouldReturnMiliLitreValue()
+        {
+            double[] litreValue = { 1.0 };
+            double litre = this.quantityMeasurement.GetConvertedValue(litreValue, QuantityMeasurement.ConversionUnits.Units.LITRE_TO_ML);
+            Assert.AreEqual(1000, litre);
+        }
     }
 }
