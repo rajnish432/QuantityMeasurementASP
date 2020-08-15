@@ -20,10 +20,11 @@ namespace QuantityMeasurement
             YARD_TO_INCH,
             YARD_TO_FEET,
             INCH_TO_CENTIMETER,
-            INCH_TO_INCH,
+            UNIT,
             CENTIMETER_TO_INCH,
             GALLON_TO_LITRE,
             LITRE_TO_ML,
+            ML_TO_LITRE,
         }
 
         /// <summary>
@@ -63,7 +64,10 @@ namespace QuantityMeasurement
                     return 3.78;
 
                 case Units.LITRE_TO_ML:
-                    return 1000;
+                    return 1000.0;
+
+                case Units.ML_TO_LITRE:
+                    return 1 / 1000.0;
 
                 default:
                     return 1.0;

@@ -322,7 +322,7 @@ namespace QuantityMeasurementTest
         public void GivenTwoInchValue_WhenAdded_ShouldReturnProperValue()
         {
             double[] inchValue = { 2.0, 2.0 };
-            double inch = this.quantityMeasurement.GetConvertedValue(inchValue, QuantityMeasurement.ConversionUnits.Units.INCH_TO_INCH, QuantityMeasurement.ConversionUnits.Units.INCH_TO_INCH);
+            double inch = this.quantityMeasurement.GetConvertedValue(inchValue, QuantityMeasurement.ConversionUnits.Units.UNIT, QuantityMeasurement.ConversionUnits.Units.UNIT);
             Assert.AreEqual(4.0, inch);
         }
 
@@ -333,7 +333,7 @@ namespace QuantityMeasurementTest
         public void GivenOneInchAndOneFeetValue_WhenAdded_ShouldReturnProperValue()
         {
             double[] inchValue = { 1.0, 2.0 };
-            double addedValue = this.quantityMeasurement.GetConvertedValue(inchValue, QuantityMeasurement.ConversionUnits.Units.FEET_TO_INCH, QuantityMeasurement.ConversionUnits.Units.INCH_TO_INCH);
+            double addedValue = this.quantityMeasurement.GetConvertedValue(inchValue, QuantityMeasurement.ConversionUnits.Units.FEET_TO_INCH, QuantityMeasurement.ConversionUnits.Units.UNIT);
             Assert.AreEqual(14.0, addedValue);
         }
 
@@ -355,7 +355,7 @@ namespace QuantityMeasurementTest
         public void GivenTwoInchAndTwoPointFiveCentimeterValue_WhenAdded_ShouldReturnProperValue()
         {
             double[] inchValue = { 2.0, 2.5 };
-            double addedValue = this.quantityMeasurement.GetConvertedValue(inchValue, QuantityMeasurement.ConversionUnits.Units.INCH_TO_INCH, QuantityMeasurement.ConversionUnits.Units.CENTIMETER_TO_INCH);
+            double addedValue = this.quantityMeasurement.GetConvertedValue(inchValue, QuantityMeasurement.ConversionUnits.Units.UNIT, QuantityMeasurement.ConversionUnits.Units.CENTIMETER_TO_INCH);
             Assert.AreEqual(3.0, addedValue);
         }
 
@@ -379,6 +379,28 @@ namespace QuantityMeasurementTest
             double[] litreValue = { 1.0 };
             double litre = this.quantityMeasurement.GetConvertedValue(litreValue, QuantityMeasurement.ConversionUnits.Units.LITRE_TO_ML);
             Assert.AreEqual(1000, litre);
+        }
+
+        /// <summary>
+        /// Test 6.1: To Add Gallon And Litre As Litres.
+        /// </summary>
+        [Test]
+        public void GivenGallonAndLitreValue_WhenConvertedAndAdded_ShouldReturnLitreValue()
+        {
+            double[] values = { 1.0, 3.78 };
+            double litre = this.quantityMeasurement.GetConvertedValue(values, QuantityMeasurement.ConversionUnits.Units.GALLON_TO_LITRE, QuantityMeasurement.ConversionUnits.Units.UNIT);
+            Assert.AreEqual(7.56, litre);
+        }
+
+        /// <summary>
+        /// Test 6.2: To Add Litre And Ml As Litres.
+        /// </summary>
+        [Test]
+        public void GivenLitreAndMlValue_WhenConvertedAndAdded_ShouldReturnLitreValue()
+        {
+            double[] values = { 1.0, 1000 };
+            double litre = this.quantityMeasurement.GetConvertedValue(values, QuantityMeasurement.ConversionUnits.Units.UNIT, QuantityMeasurement.ConversionUnits.Units.ML_TO_LITRE);
+            Assert.AreEqual(2, litre);
         }
     }
 }
