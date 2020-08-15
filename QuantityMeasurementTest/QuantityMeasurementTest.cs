@@ -402,5 +402,38 @@ namespace QuantityMeasurementTest
             double litre = this.quantityMeasurement.GetConvertedValue(values, QuantityMeasurement.ConversionUnits.Units.UNIT, QuantityMeasurement.ConversionUnits.Units.ML_TO_LITRE);
             Assert.AreEqual(2, litre);
         }
+
+        /// <summary>
+        /// Test 7.1: To check 1 Kg is Equal To 1000 gms.
+        /// </summary>
+        [Test]
+        public void GivenKiloGramValue_WhenConverted_ShouldReturnGramValue()
+        {
+            double[] kgValue = { 1.0};
+            double gram = this.quantityMeasurement.GetConvertedValue(kgValue, QuantityMeasurement.ConversionUnits.Units.KG_TO_GRAMS);
+            Assert.AreEqual(1000.0, gram);
+        }
+
+        /// <summary>
+        /// Test 7.2: To check 1 Tonne is Equal To 1000 Kgs.
+        /// </summary>
+        [Test]
+        public void GivenTonneValue_WhenConverted_ShouldReturnKiloGramValue()
+        {
+            double[] kgValue = { 1.0 };
+            double kg = this.quantityMeasurement.GetConvertedValue(kgValue, QuantityMeasurement.ConversionUnits.Units.TONNE_TO_KG);
+            Assert.AreEqual(1000.0, kg);
+        }
+
+        /// <summary>
+        /// Test 7.3: To Add 1 Tonne And 1000 Gm is Equal To 1001 Kgs.
+        /// </summary>
+        [Test]
+        public void GivenTonneAndGmValue_WhenConvertedAndAdded_ShouldReturnKiloGramValue()
+        {
+            double[] values = { 1.0, 1000.0 };
+            double kg = this.quantityMeasurement.GetConvertedValue(values, QuantityMeasurement.ConversionUnits.Units.TONNE_TO_KG, QuantityMeasurement.ConversionUnits.Units.GRAMS_TO_KG);
+            Assert.AreEqual(1001.0, kg);
+        }
     }
 }

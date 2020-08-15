@@ -25,6 +25,9 @@ namespace QuantityMeasurement
             GALLON_TO_LITRE,
             LITRE_TO_ML,
             ML_TO_LITRE,
+            KG_TO_GRAMS,
+            TONNE_TO_KG,
+            GRAMS_TO_KG,
         }
 
         /// <summary>
@@ -67,6 +70,15 @@ namespace QuantityMeasurement
                     return 1000.0;
 
                 case Units.ML_TO_LITRE:
+                    return 1 / 1000.0;
+
+                case Units.KG_TO_GRAMS:
+                    return 1000.0;
+
+                case Units.TONNE_TO_KG:
+                    return 1000.0;
+
+                case Units.GRAMS_TO_KG:
                     return 1 / 1000.0;
 
                 default:
